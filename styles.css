@@ -1,0 +1,329 @@
+/* Layout */
+header, footer, section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.project {
+    flex: 1 1 calc(33.333% - 1em);
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid .project {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .project {
+        flex: 1 1 100%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    /* Contact form adjustments */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .project {
+        flex: 1 1 calc(50% - 1em);
+    }
+}
+
+/* Desktop screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .project {
+        flex: 1 1 calc(33.333% - 1em);
+    }
+}
+nav ul li a {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%; 
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        color: #007BFF; /* Blue color for h2 */
+        text-align: center; /* Center align h2 text */
+    }
+
+    .project {
+        flex: 1 1 100%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+        display: block;
+    }
+
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+/* Improved Background Color Scheme */
+body {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark text color for readability */
+}
+
+header, footer {
+    background-color: #007BFF; /* Blue background for header and footer */
+    color: white; /* White text color for header and footer */
+}
+
+section {
+    background-color: #ffffff; /* White background for sections */
+    color: #333; /* Dark text color for sections */
+}
+
+nav ul li a {
+    color: #ffffff; /* White text color for navigation links */
+}
+
+nav ul li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.modal-content {
+    background-color: #ffffff; /* White background for modal content */
+    color: #333; /* Dark text color for modal content */
+}
+
+/* Desktop screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+/* Large desktop screens (min-width: 1440px) */
+@media (min-width: 1440px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .project {
+        flex: 1 1 calc(25% - 1em);
+    }
+}
+/* Contact form adjustments */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    gap: 1em;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    background-color: #007BFF; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
